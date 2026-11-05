@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autollmate Blog</title>
+    <link>https://autollmate.com/blog.html</link>
+    <description>Practical writing on technical SEO, product engineering, and automation from the team behind PruneSEO.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Nov 2026 09:00:00 +0000</lastBuildDate>
+    <atom:link href="https://autollmate.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://autollmate.com/assets/img/icon-512.png</url>
+      <title>Autollmate Blog</title>
+      <link>https://autollmate.com/blog.html</link>
+    </image>
+    <item>
+      <title>Technical SEO audit checklist: the 9 checks that actually move rankings</title>
+      <link>https://autollmate.com/blog/technical-seo-audit-checklist.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/technical-seo-audit-checklist.html</guid>
+      <pubDate>Fri, 30 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Technical SEO</category>
+      <description>A crawl-first checklist for finding indexation blockers, crawl waste, and duplicate URL patterns — without drowning in a 40,000-row export.</description>
+    </item>
+    <item>
+      <title>Crawl budget optimization: stop making Google read pages you don't need</title>
+      <link>https://autollmate.com/blog/crawl-budget-optimization.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/crawl-budget-optimization.html</guid>
+      <pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Crawl &amp; Index</category>
+      <description>Crawl budget is not a number you can buy. It is the result of how cleanly your URL space is structured. Here is how to clean it up.</description>
+    </item>
+    <item>
+      <title>Why Google ignores your pages — and how to diagnose it with evidence</title>
+      <link>https://autollmate.com/blog/why-google-ignores-pages.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/why-google-ignores-pages.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Indexation</category>
+      <description>"Discovered, currently not indexed" is a symptom, not a diagnosis. A practical framework for narrowing down the real cause.</description>
+    </item>
+    <item>
+      <title>URL patterns and SEO waste: a practical cleanup guide</title>
+      <link>https://autollmate.com/blog/url-patterns-seo-waste.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/url-patterns-seo-waste.html</guid>
+      <pubDate>Fri, 18 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Technical SEO</category>
+      <description>Filter parameters, pagination, and stale variants can triple your URL count without adding a single useful page. Here is how to find and fix them.</description>
+    </item>
+    <item>
+      <title>How to choose a software development agency in 2026</title>
+      <link>https://autollmate.com/blog/choosing-a-software-development-agency.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/choosing-a-software-development-agency.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Partnering</category>
+      <description>Ten questions that separate a real engineering partner from a body shop — from pricing discovery to the bus factor on your codebase.</description>
+    </item>
+    <item>
+      <title>AI integration for business: a practical 2026 playbook</title>
+      <link>https://autollmate.com/blog/ai-integration-for-business.html</link>
+      <guid isPermaLink="true">https://autollmate.com/blog/ai-integration-for-business.html</guid>
+      <pubDate>Fri, 21 Aug 2026 09:00:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Most AI projects fail at the workflow, not the model. A four-layer approach to shipping AI features that survive real users.</description>
+    </item>
+  </channel>
+</rss>

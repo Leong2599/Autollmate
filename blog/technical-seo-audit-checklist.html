@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical SEO Audit Checklist: 9 Checks That Matter (2026)</title>
+  <meta name="description" content="A crawl-first technical SEO audit checklist: indexation blockers, URL pattern waste, canonicals, redirects, orphan pages, and how to measure what changed.">
+  <link rel="canonical" href="https://autollmate.com/blog/technical-seo-audit-checklist.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Jordan Reyes">
+  <meta name="theme-color" content="#06070b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Autollmate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Technical SEO Audit Checklist: 9 Checks That Matter (2026)">
+  <meta property="og:description" content="A crawl-first checklist for finding indexation blockers, crawl waste, and duplicate URL patterns — without drowning in a 40,000-row export.">
+  <meta property="og:url" content="https://autollmate.com/blog/technical-seo-audit-checklist.html">
+  <meta property="og:image" content="https://autollmate.com/assets/img/og-blog-audit.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Technical SEO audit checklist.">
+  <meta property="article:published_time" content="2026-10-30T09:00:00+00:00">
+  <meta property="article:modified_time" content="2026-11-05T09:00:00+00:00">
+  <meta property="article:author" content="Jordan Reyes">
+  <meta property="article:section" content="Technical SEO">
+  <meta property="article:tag" content="technical SEO audit">
+  <meta property="article:tag" content="indexation">
+  <meta property="article:tag" content="crawl analysis">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technical SEO Audit Checklist: 9 Checks That Matter">
+  <meta name="twitter:description" content="A crawl-first checklist for indexation, URL patterns, and crawl waste.">
+  <meta name="twitter:image" content="https://autollmate.com/assets/img/og-blog-audit.png">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="Autollmate Blog RSS" href="../feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://autollmate.com/blog/technical-seo-audit-checklist.html#article",
+        "headline": "Technical SEO Audit Checklist: 9 Checks That Actually Move Rankings",
+        "description": "A crawl-first technical SEO audit checklist covering indexation blockers, URL pattern waste, canonicals, redirects, orphan pages, and crawl comparison.",
+        "datePublished": "2026-10-30T09:00:00+00:00",
+        "dateModified": "2026-11-05T09:00:00+00:00",
+        "author": { "@type": "Person", "name": "Jordan Reyes", "jobTitle": "Co-founder & Engineering", "worksFor": { "@id": "https://autollmate.com/#organization" } },
+        "publisher": { "@id": "https://autollmate.com/#organization" },
+        "image": "https://autollmate.com/assets/img/og-blog-audit.png",
+        "articleSection": "Technical SEO",
+        "keywords": "technical SEO audit, indexation audit, crawl analysis, SEO checklist",
+        "wordCount": "1200",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://autollmate.com/blog/technical-seo-audit-checklist.html" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autollmate.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autollmate.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Technical SEO audit checklist", "item": "https://autollmate.com/blog/technical-seo-audit-checklist.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should you run a technical SEO audit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Run a full audit quarterly, and a focused crawl after any major release, migration, or template change. Large sites with frequent publishing benefit from a monthly crawl comparison." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you need Google Search Console for a technical SEO audit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A crawl-first audit can find access, indexability, canonical, redirect, and internal-link issues without Search Console. Search Console adds useful coverage and impression data, but it should not be the only evidence source." }
+          },
+          {
+            "@type": "Question",
+            "name": "What should a technical SEO audit deliver?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A prioritized list of fixes grouped by URL pattern, each with observed evidence, the affected URL count, a severity, and a suggested action. A raw crawl export is not an audit." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="../index.html" aria-label="Autollmate home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span>Autollmate</span>
+        </a>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="nav-mobile-cta"><a class="btn btn--primary btn--sm" href="../contact.html">Start a project</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav-cta" href="../contact.html">Start a project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-hero">
+        <div class="container">
+          <ol class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li>Technical SEO audit checklist</li>
+          </ol>
+          <span class="eyebrow">Technical SEO</span>
+          <h1>Technical SEO audit checklist: the 9 checks that actually move rankings</h1>
+          <div class="article-meta">
+            <span class="pill">Checklist</span>
+            <span>Jordan Reyes</span>
+            <span class="dot"></span>
+            <time datetime="2026-10-30">October 30, 2026</time>
+            <span class="dot"></span>
+            <span>9 min read</span>
+          </div>
+          <div class="article-cover" aria-hidden="true">
+            <span>Nine checks. One prioritized plan.</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="container">
+          <div class="prose">
+            <p>A technical SEO audit has one job: tell you what to fix first, and why. Most audits fail at that job because they stop at data collection — a 40,000-row crawl export with no interpretation. The checklist below is the one we run before and after every release, and it is the same model <a href="../products.html">PruneSEO</a> is built around. It is ordered by leverage: fix access before you chase content, and fix patterns before you fix individual URLs.</p>
+
+            <blockquote><p>If a finding affects one URL, fix the URL. If it affects 4,000 URLs, fix the pattern.</p></blockquote>
+
+            <nav class="toc" aria-label="Table of contents">
+              <strong>On this page</strong>
+              <ol>
+                <li><a href="#crawl-access">Confirm crawl access and robots directives</a></li>
+                <li><a href="#indexability">Check indexability at scale</a></li>
+                <li><a href="#url-inventory">Build a URL inventory and group by pattern</a></li>
+                <li><a href="#parameters">Find parameter and faceted navigation waste</a></li>
+                <li><a href="#canonicals">Audit canonical signals across patterns</a></li>
+                <li><a href="#sitemaps">Reconcile sitemaps with the crawl inventory</a></li>
+                <li><a href="#redirects">Clean up redirects and status codes</a></li>
+                <li><a href="#links">Measure internal link depth and orphans</a></li>
+                <li><a href="#compare">Compare crawls over time</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="crawl-access">1. Confirm crawl access and robots directives</h2>
+            <p>Start at the front door. Fetch <code>robots.txt</code> and confirm it is not blocking the pages, CSS, or JavaScript the site depends on. A single stale <code>Disallow: /</code> line can undo months of content work. Check for host directives, conflicting rules between environments, and staging rules that leaked into production.</p>
+            <p>One nuance worth repeating: blocking a URL in robots.txt prevents crawling, not indexing. A disallowed URL can still appear in search results if something links to it. If the goal is removal from the index, you need <code>noindex</code> on a crawlable page — not a disallow.</p>
+
+            <h2 id="indexability">2. Check indexability at scale</h2>
+            <p>Indexability is not a single tag. Look for <code>noindex</code> in meta tags and <code>X-Robots-Tag</code> headers, canonical conflicts, and pages that return a 200 but render an error or empty template. Sample by template rather than URL: if one product page has a stray noindex, the whole product template probably does.</p>
+            <p>Watch for contradictory signals. A page that is both <code>noindex</code> and canonicalised elsewhere tells search engines two different things. Pick one intent per template and apply it consistently.</p>
+
+            <h2 id="url-inventory">3. Build a URL inventory and group by pattern</h2>
+            <p>The raw number of URLs matters less than the shape of the URL space. Group your crawl by path template, parameter set, and status family. A catalogue with 50,000 URLs might really be 400 product templates, 1,200 category pages, and 48,000 sort and filter combinations. That single reframing changes the entire conversation.</p>
+            <p>For each group, note the count, the status codes, the canonical target, and whether the group is linked from navigation. The groups with the highest count and the lowest value are your SEO waste candidates.</p>
+
+            <h2 id="parameters">4. Find parameter and faceted navigation waste</h2>
+            <p>Sort parameters, filters, tracking parameters, session IDs, and view modes are the usual suspects. Decide per pattern, not per URL: keep, canonicalise, <code>noindex</code>, or block. Blanket-blocking every parameter often removes legitimate landing pages and link equity along with the junk.</p>
+            <p>Ask of each pattern: can this URL rank for a query we care about? If yes, keep it crawlable and make it self-canonical. If no, stop it from consuming crawl attention.</p>
+
+            <h2 id="canonicals">5. Audit canonical signals across patterns</h2>
+            <p>Canonicals should point to the preferred version of a page, and they should agree with the sitemap, internal links, and redirects. Common failures include self-referencing canonicals on paginated series, cross-domain canonicals left over from a migration, and canonical tags injected by a component that does not know the page context.</p>
+            <p>Do not treat canonical tags as a licence to publish duplicates. They are a hint. At scale, the cleanest fix is usually to stop generating the duplicate URL in the first place.</p>
+
+            <h2 id="sitemaps">6. Reconcile sitemaps with the crawl inventory</h2>
+            <p>A sitemap should contain canonical, indexable, 200-status URLs. If it contains noindex pages, redirects, or 404s, it is actively wasting attention. Compare sitemap URLs against your crawl inventory and look for drift — new templates missing from the sitemap, retired templates still listed, and URLs that only exist in the sitemap.</p>
+            <p>Internal linking and sitemaps should tell the same story about which pages matter.</p>
+
+            <h2 id="redirects">7. Clean up redirects and status codes</h2>
+            <p>Find chains, loops, and temporary redirects used as permanent moves. A three-hop chain is a bug; a loop is an outage for that URL. Also check for soft 404s — pages that return 200 but show no meaningful content — and for old URLs still receiving internal links.</p>
+            <p>When a page is gone for good, a 410 can be cleaner than a redirect to an unrelated category. Redirect to the closest genuinely equivalent page, or let it go.</p>
+
+            <h2 id="links">8. Measure internal link depth and orphans</h2>
+            <p>Important pages should be reachable within a few clicks of the homepage. Crawl depth exposes pages that are technically indexable but practically invisible. Orphan pages — reachable from no internal link — are the extreme case and often accumulate after migrations.</p>
+            <p>Link depth is also a prioritisation tool: the pages you want ranked should be the pages you link to most clearly.</p>
+
+            <h2 id="compare">9. Compare crawls over time</h2>
+            <p>An audit is a baseline, not a one-off. Re-crawl after changes and compare the same patterns. Did the duplicate group shrink? Did the noindex count fall? Did the redirect chains disappear? Without a comparison, you are asserting progress rather than measuring it.</p>
+            <p>This is why <a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">PruneSEO</a> includes four crawl runs per website per month and keeps crawl comparison at the pattern level.</p>
+
+            <div class="callout">
+              <strong>Observed vs inferred</strong>
+              Keep facts and conclusions separate. A 404 status, a canonical tag, or a robots directive you fetched is observed. "This group is duplicate content" is inferred from those signals. Label both, especially when handing findings to another team.
+            </div>
+
+            <h2>How to run this audit in a week</h2>
+            <ol>
+              <li><strong>Monday:</strong> crawl the site and pull server logs for the last 30 days.</li>
+              <li><strong>Tuesday:</strong> classify URLs into patterns and rank groups by count and value.</li>
+              <li><strong>Wednesday:</strong> verify a sample of each finding manually in a browser.</li>
+              <li><strong>Thursday:</strong> write the action plan: pattern, evidence, impact, owner, fix.</li>
+              <li><strong>Friday:</strong> ship the top three fixes and schedule the re-crawl.</li>
+            </ol>
+
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq-item">
+                <summary>How often should you run a technical SEO audit?</summary>
+                <p>Run a full audit quarterly, and a focused crawl after any major release, migration, or template change. Large sites with frequent publishing benefit from a monthly crawl comparison.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you need Google Search Console for a technical SEO audit?</summary>
+                <p>No. A crawl-first audit can find access, indexability, canonical, redirect, and internal-link issues without Search Console. Search Console adds useful coverage and impression data, but it should not be the only evidence source.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What should a technical SEO audit deliver?</summary>
+                <p>A prioritized list of fixes grouped by URL pattern, each with observed evidence, the affected URL count, a severity, and a suggested action. A raw crawl export is not an audit.</p>
+              </details>
+            </div>
+
+            <div class="author-card">
+              <span class="avatar" aria-hidden="true">JR</span>
+              <div>
+                <strong>Jordan Reyes</strong>
+                <span>Co-founder &amp; Engineering, Autollmate</span>
+                <p>Builds crawlers, platforms, and the systems behind PruneSEO. Writes about technical SEO and software that has to survive production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related">
+      <div class="container">
+        <h2>Keep reading</h2>
+        <div class="blog-grid">
+          <article class="post-card">
+            <div class="post-thumb post-thumb--2"><span class="post-cat">Crawl &amp; Index</span><span class="post-index">02</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-16">Oct 16, 2026</time><span class="dot"></span><span>8 min read</span></div>
+              <h3 class="post-title"><a href="crawl-budget-optimization.html">Crawl budget optimization: stop making Google read pages you don't need</a></h3>
+              <a class="link-arrow" href="crawl-budget-optimization.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--3"><span class="post-cat">Indexation</span><span class="post-index">03</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-02">Oct 2, 2026</time><span class="dot"></span><span>10 min read</span></div>
+              <h3 class="post-title"><a href="why-google-ignores-pages.html">Why Google ignores your pages — and how to diagnose it with evidence</a></h3>
+              <a class="link-arrow" href="why-google-ignores-pages.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb"><span class="post-cat">Technical SEO</span><span class="post-index">04</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-09-18">Sep 18, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="url-patterns-seo-waste.html">URL patterns and SEO waste: a practical cleanup guide</a></h3>
+              <a class="link-arrow" href="url-patterns-seo-waste.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Autollmate home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span>Autollmate</span>
+          </a>
+          <p>A software development agency and product studio. We build web apps, AI systems, and automation that compound — including our own product, PruneSEO.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/company/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9Z"/></svg>
+            </a>
+            <a href="https://x.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.3L2 2h6.4l4.4 5.8L18.9 2Zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20Z"/></svg>
+            </a>
+            <a href="https://github.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer-heading">Product</h2>
+          <ul class="footer-links">
+            <li><a href="../products.html">PruneSEO overview</a></li>
+            <li><a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">Visit pruneseo.com</a></li>
+            <li><a href="https://pruneseo.com/#pricing" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+            <li><a href="https://docs.pruneseo.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Company</h2>
+          <ul class="footer-links">
+            <li><a href="../about.html">About Autollmate</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h2 class="footer-heading">The Automation Brief</h2>
+          <p>One useful idea on product engineering, technical SEO, or automation. Twice a month.</p>
+          <form data-mock-submit data-success="You're on the list. Look out for the next brief.">
+            <div class="input-row">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              <button class="btn btn--primary btn--sm" type="submit">Join</button>
+            </div>
+            <div class="form-status" hidden></div>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Autollmate. All rights reserved.</p>
+        <ul>
+          <li><a href="../privacy-policy.html">Privacy</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

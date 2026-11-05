@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL Patterns &amp; SEO Waste: A Practical Cleanup Guide (2026)</title>
+  <meta name="description" content="How to find wasteful URL patterns — filters, pagination, tags, stale variants — and decide whether to keep, canonicalize, noindex, redirect, or remove them.">
+  <link rel="canonical" href="https://autollmate.com/blog/url-patterns-seo-waste.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Jordan Reyes">
+  <meta name="theme-color" content="#06070b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Autollmate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="URL Patterns &amp; SEO Waste: A Practical Cleanup Guide">
+  <meta property="og:description" content="Fix the pattern, not 40,000 URLs. A practical guide to clustering URL inventories and choosing the right treatment per pattern.">
+  <meta property="og:url" content="https://autollmate.com/blog/url-patterns-seo-waste.html">
+  <meta property="og:image" content="https://autollmate.com/assets/img/og-blog-url-patterns.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="URL patterns and SEO waste.">
+  <meta property="article:published_time" content="2026-09-18T09:00:00+00:00">
+  <meta property="article:modified_time" content="2026-11-05T09:00:00+00:00">
+  <meta property="article:author" content="Jordan Reyes">
+  <meta property="article:section" content="Technical SEO">
+  <meta property="article:tag" content="URL patterns">
+  <meta property="article:tag" content="SEO waste">
+  <meta property="article:tag" content="duplicate content">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="URL Patterns &amp; SEO Waste: A Practical Cleanup Guide">
+  <meta name="twitter:description" content="Fix the pattern, not 40,000 URLs.">
+  <meta name="twitter:image" content="https://autollmate.com/assets/img/og-blog-url-patterns.png">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="Autollmate Blog RSS" href="../feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://autollmate.com/blog/url-patterns-seo-waste.html#article",
+        "headline": "URL Patterns and SEO Waste: A Practical Cleanup Guide",
+        "description": "How to find wasteful URL patterns and decide whether to keep, canonicalize, noindex, redirect, or remove them.",
+        "datePublished": "2026-09-18T09:00:00+00:00",
+        "dateModified": "2026-11-05T09:00:00+00:00",
+        "author": { "@type": "Person", "name": "Jordan Reyes", "jobTitle": "Co-founder & Engineering", "worksFor": { "@id": "https://autollmate.com/#organization" } },
+        "publisher": { "@id": "https://autollmate.com/#organization" },
+        "image": "https://autollmate.com/assets/img/og-blog-url-patterns.png",
+        "articleSection": "Technical SEO",
+        "keywords": "URL patterns, SEO waste, duplicate URLs, crawl waste, technical SEO",
+        "wordCount": "1150",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://autollmate.com/blog/url-patterns-seo-waste.html" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autollmate.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autollmate.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "URL patterns and SEO waste", "item": "https://autollmate.com/blog/url-patterns-seo-waste.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a URL pattern in SEO?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A URL pattern is a group of URLs that share the same structural shape — the same path template, parameter set, and often the same status, canonical, and robots signals. Grouping by pattern lets you fix thousands of URLs with one decision." }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I noindex or canonicalize duplicate URLs?",
+            "acceptedAnswer": { "@type": "Answer", "text": "If the duplicate should never appear in search and has no value, noindex can be appropriate. If it is a legitimate alternate version that should consolidate signals to a primary URL, a canonical is usually better. Do not combine conflicting signals, and decide per pattern." }
+          },
+          {
+            "@type": "Question",
+            "name": "How many URLs is too many?",
+            "acceptedAnswer": { "@type": "Answer", "text": "There is no universal number. What matters is the ratio of valuable URLs to low-value variants and whether important pages are crawled and indexed quickly. A site with 20,000 meaningful pages can be healthy; a site with 20,000 filter combinations around 400 products is usually not." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="../index.html" aria-label="Autollmate home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span>Autollmate</span>
+        </a>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="nav-mobile-cta"><a class="btn btn--primary btn--sm" href="../contact.html">Start a project</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav-cta" href="../contact.html">Start a project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-hero">
+        <div class="container">
+          <ol class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li>URL patterns and SEO waste</li>
+          </ol>
+          <span class="eyebrow">Technical SEO</span>
+          <h1>URL patterns and SEO waste: a practical cleanup guide</h1>
+          <div class="article-meta">
+            <span class="pill">Guide</span>
+            <span>Jordan Reyes</span>
+            <span class="dot"></span>
+            <time datetime="2026-09-18">September 18, 2026</time>
+            <span class="dot"></span>
+            <span>9 min read</span>
+          </div>
+          <div class="article-cover post-thumb--2" aria-hidden="true">
+            <span>Fix the pattern, not 40,000 URLs.</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="container">
+          <div class="prose">
+            <p>Every large website has more URLs than pages. Filters, sort orders, tracking parameters, pagination, tag combinations, and older product variants multiply a modest content inventory into a six-figure URL space. Most of those URLs were never designed; they are byproducts of how the application constructs links.</p>
+
+            <p>That is good news. Byproducts follow patterns, and patterns can be fixed in batches. The unit of work in a technical SEO cleanup should never be "the URL" — it should be "the URL pattern".</p>
+
+            <nav class="toc" aria-label="Table of contents">
+              <strong>On this page</strong>
+              <ol>
+                <li><a href="#what">What counts as a URL pattern</a></li>
+                <li><a href="#sources">Eight patterns that create waste</a></li>
+                <li><a href="#cluster">How to cluster an inventory</a></li>
+                <li><a href="#decide">Decide the treatment per pattern</a></li>
+                <li><a href="#example">An illustrative cleanup</a></li>
+                <li><a href="#monitor">Monitor the cleanup</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="what">What counts as a URL pattern</h2>
+            <p>A pattern is a set of URLs that share a structural shape: the same path template, the same parameter set, and usually the same status code, canonical behaviour, and robots signals. For example:</p>
+            <ul>
+              <li><code>/products?sort=*</code> — every sorted variant of a product listing.</li>
+              <li><code>/category/page/*</code> — pagination across categories.</li>
+              <li><code>/tag/*</code> — auto-generated tag archives.</li>
+              <li><code>/old-product/*</code> — retired product URLs still returning 200.</li>
+            </ul>
+            <p>Grouping by pattern converts a spreadsheet problem into an editorial problem. There are usually fewer than 30 meaningful patterns on a site, even when there are 200,000 URLs.</p>
+
+            <h2 id="sources">Eight patterns that create waste</h2>
+            <ol>
+              <li><strong>Sort and filter parameters.</strong> The classic. A category with 40 filters can generate thousands of near-identical pages.</li>
+              <li><strong>Tracking and session parameters.</strong> Analytics tags, affiliate IDs, and session tokens that create URL variants of the same page.</li>
+              <li><strong>Deep pagination.</strong> Page 138 of a listing that nobody will ever browse or search for.</li>
+              <li><strong>Auto-generated tags.</strong> Thousands of one-item tag pages with no editorial intent.</li>
+              <li><strong>Date archives.</strong> Monthly and daily archives from a blog's early years.</li>
+              <li><strong>Stale variants.</strong> Discontinued products, old colourways, and expired campaign pages still returning 200.</li>
+              <li><strong>Case, slash, and index variants.</strong> <code>/Page</code>, <code>/page/</code>, and <code>/page/index.html</code> resolving to the same content.</li>
+              <li><strong>Print and share views.</strong> Alternate templates that add no search value.</li>
+            </ol>
+
+            <h2 id="cluster">How to cluster an inventory</h2>
+            <p>You do not need a machine-learning pipeline to do this. Start with a crawl and apply three passes:</p>
+            <ol>
+              <li><strong>Normalise the path.</strong> Replace IDs, slugs, and numbers with placeholders. <code>/product/1042-blue-shirt</code> becomes <code>/product/*</code>.</li>
+              <li><strong>Normalise the query string.</strong> Sort parameter names and replace values with <code>*</code>. Keep the set of parameter names, because that is what identifies the pattern.</li>
+              <li><strong>Group by signal.</strong> Within each shape, group by status code, canonical target, and robots directive. A pattern that returns 200 and self-canonicalises is a different decision from one that redirects.</li>
+            </ol>
+            <p>The output is a table of patterns with counts, example URLs, and signals. That table is the actual deliverable of an SEO cleanup.</p>
+
+            <div class="callout">
+              <strong>Observed vs inferred</strong>
+              The URL, status, canonical, and robots directive are observed. "This group is SEO waste" is an inference. State both, and make the evidence easy to inspect.
+            </div>
+
+            <h2 id="decide">Decide the treatment per pattern</h2>
+            <p>There are six treatments. Choose one per pattern and document why.</p>
+            <table>
+              <thead>
+                <tr><th>Treatment</th><th>Use when</th><th>Watch out for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Keep and index</td><td>The pattern targets real search demand and has unique value.</td><td>Make it self-canonical, linked, and in the sitemap.</td></tr>
+                <tr><td>Canonicalise</td><td>It is a legitimate variant that should consolidate into a primary page.</td><td>Canonicals are hints; crawlers still fetch the duplicate.</td></tr>
+                <tr><td>Noindex</td><td>The URL should be reachable but not appear in search.</td><td>Do not also block it in robots.txt, or the noindex may never be seen.</td></tr>
+                <tr><td>Disallow</td><td>It is pure crawl waste with no need to pass signals.</td><td>Blocked URLs can still be indexed if linked. Do not block CSS or JS.</td></tr>
+                <tr><td>Redirect</td><td>There is a genuinely equivalent replacement page.</td><td>Use a single 301 hop; avoid chains and loops.</td></tr>
+                <tr><td>Remove (410)</td><td>The content is gone and no equivalent exists.</td><td>Clean up internal links to the removed URLs.</td></tr>
+              </tbody>
+            </table>
+
+            <h2 id="example">An illustrative cleanup</h2>
+            <p>Consider an e-commerce site with 180,000 crawlable URLs and 6,000 products. Grouping the inventory reveals that 142,000 URLs are sort and filter combinations, 18,000 are pagination, and 9,000 are retired products. The real catalogue is much smaller than the crawl makes it look.</p>
+            <p>A pattern-level plan might keep 800 valuable facet pages (the ones with search demand), canonicalise the rest to their parent category, replace retired product URLs with 410s, and remove deep pagination from the sitemap. Within one crawl cycle, the inventory drops to roughly 40,000 URLs — not because content was deleted, but because unnecessary variants stopped competing for attention.</p>
+            <p><em>This example is illustrative, not a client result.</em></p>
+
+            <h2 id="monitor">Monitor the cleanup</h2>
+            <p>A cleanup is not finished when the ticket closes. New filters ship, campaigns add parameters, and old templates linger. Re-crawl on a regular cadence and compare pattern counts:</p>
+            <ul>
+              <li>Did the low-value pattern shrink?</li>
+              <li>Did important pages get crawled sooner?</li>
+              <li>Did the number of indexed URLs change in the direction you intended?</li>
+              <li>Did any legitimate pages disappear by accident?</li>
+            </ul>
+            <p>That is the workflow <a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">PruneSEO</a> is built around: crawl, group by pattern, inspect signals, prioritize, and compare the next run. If you want the full audit sequence, start with our <a href="technical-seo-audit-checklist.html">technical SEO audit checklist</a>.</p>
+
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq-item">
+                <summary>What is a URL pattern in SEO?</summary>
+                <p>A URL pattern is a group of URLs that share the same structural shape — the same path template, parameter set, and often the same status, canonical, and robots signals. Grouping by pattern lets you fix thousands of URLs with one decision.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Should I noindex or canonicalize duplicate URLs?</summary>
+                <p>If the duplicate should never appear in search and has no value, noindex can be appropriate. If it is a legitimate alternate version that should consolidate signals to a primary URL, a canonical is usually better. Do not combine conflicting signals, and decide per pattern.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How many URLs is too many?</summary>
+                <p>There is no universal number. What matters is the ratio of valuable URLs to low-value variants and whether important pages are crawled and indexed quickly. A site with 20,000 meaningful pages can be healthy; a site with 20,000 filter combinations around 400 products is usually not.</p>
+              </details>
+            </div>
+
+            <div class="author-card">
+              <span class="avatar" aria-hidden="true">JR</span>
+              <div>
+                <strong>Jordan Reyes</strong>
+                <span>Co-founder &amp; Engineering, Autollmate</span>
+                <p>Builds crawlers, platforms, and the systems behind PruneSEO. Writes about technical SEO and software that has to survive production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related">
+      <div class="container">
+        <h2>Keep reading</h2>
+        <div class="blog-grid">
+          <article class="post-card">
+            <div class="post-thumb"><span class="post-cat">Technical SEO</span><span class="post-index">01</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-30">Oct 30, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="technical-seo-audit-checklist.html">Technical SEO audit checklist: the 9 checks that actually move rankings</a></h3>
+              <a class="link-arrow" href="technical-seo-audit-checklist.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--2"><span class="post-cat">Crawl &amp; Index</span><span class="post-index">02</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-16">Oct 16, 2026</time><span class="dot"></span><span>8 min read</span></div>
+              <h3 class="post-title"><a href="crawl-budget-optimization.html">Crawl budget optimization: stop making Google read pages you don't need</a></h3>
+              <a class="link-arrow" href="crawl-budget-optimization.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--3"><span class="post-cat">Indexation</span><span class="post-index">03</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-02">Oct 2, 2026</time><span class="dot"></span><span>10 min read</span></div>
+              <h3 class="post-title"><a href="why-google-ignores-pages.html">Why Google ignores your pages — and how to diagnose it with evidence</a></h3>
+              <a class="link-arrow" href="why-google-ignores-pages.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Autollmate home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span>Autollmate</span>
+          </a>
+          <p>A software development agency and product studio. We build web apps, AI systems, and automation that compound — including our own product, PruneSEO.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/company/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9Z"/></svg>
+            </a>
+            <a href="https://x.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.3L2 2h6.4l4.4 5.8L18.9 2Zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20Z"/></svg>
+            </a>
+            <a href="https://github.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer-heading">Product</h2>
+          <ul class="footer-links">
+            <li><a href="../products.html">PruneSEO overview</a></li>
+            <li><a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">Visit pruneseo.com</a></li>
+            <li><a href="https://pruneseo.com/#pricing" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+            <li><a href="https://docs.pruneseo.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Company</h2>
+          <ul class="footer-links">
+            <li><a href="../about.html">About Autollmate</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h2 class="footer-heading">The Automation Brief</h2>
+          <p>One useful idea on product engineering, technical SEO, or automation. Twice a month.</p>
+          <form data-mock-submit data-success="You're on the list. Look out for the next brief.">
+            <div class="input-row">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              <button class="btn btn--primary btn--sm" type="submit">Join</button>
+            </div>
+            <div class="form-status" hidden></div>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Autollmate. All rights reserved.</p>
+        <ul>
+          <li><a href="../privacy-policy.html">Privacy</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

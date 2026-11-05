@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Google Ignores Your Pages — Diagnose It With Evidence</title>
+  <meta name="description" content="Discovered but not indexed? Crawled but not indexed? A practical framework for diagnosing indexation problems with crawl data, logs, and pattern-level evidence.">
+  <link rel="canonical" href="https://autollmate.com/blog/why-google-ignores-pages.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Jordan Reyes">
+  <meta name="theme-color" content="#06070b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Autollmate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Why Google Ignores Your Pages — Diagnose It With Evidence">
+  <meta property="og:description" content="Discovered but not indexed is a symptom, not a diagnosis. A practical framework for narrowing down the real cause.">
+  <meta property="og:url" content="https://autollmate.com/blog/why-google-ignores-pages.html">
+  <meta property="og:image" content="https://autollmate.com/assets/img/og-blog-indexation.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Why Google ignores your pages.">
+  <meta property="article:published_time" content="2026-10-02T09:00:00+00:00">
+  <meta property="article:modified_time" content="2026-11-05T09:00:00+00:00">
+  <meta property="article:author" content="Jordan Reyes">
+  <meta property="article:section" content="Indexation">
+  <meta property="article:tag" content="pages not indexed">
+  <meta property="article:tag" content="Google indexation">
+  <meta property="article:tag" content="technical SEO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Google Ignores Your Pages">
+  <meta name="twitter:description" content="A practical framework for diagnosing indexation with evidence.">
+  <meta name="twitter:image" content="https://autollmate.com/assets/img/og-blog-indexation.png">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="Autollmate Blog RSS" href="../feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://autollmate.com/blog/why-google-ignores-pages.html#article",
+        "headline": "Why Google Ignores Your Pages — and How to Diagnose It With Evidence",
+        "description": "A practical framework for diagnosing indexation problems with crawl data, logs, and pattern-level evidence.",
+        "datePublished": "2026-10-02T09:00:00+00:00",
+        "dateModified": "2026-11-05T09:00:00+00:00",
+        "author": { "@type": "Person", "name": "Jordan Reyes", "jobTitle": "Co-founder & Engineering", "worksFor": { "@id": "https://autollmate.com/#organization" } },
+        "publisher": { "@id": "https://autollmate.com/#organization" },
+        "image": "https://autollmate.com/assets/img/og-blog-indexation.png",
+        "articleSection": "Indexation",
+        "keywords": "pages not indexed, Google indexation, discovered currently not indexed, crawled currently not indexed",
+        "wordCount": "1250",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://autollmate.com/blog/why-google-ignores-pages.html" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autollmate.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autollmate.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Why Google ignores your pages", "item": "https://autollmate.com/blog/why-google-ignores-pages.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does Google say discovered but currently not indexed?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It means Google knows the URL exists but has not crawled it yet, or has chosen not to spend crawl attention on it. Common causes are weak internal linking, large low-value URL inventories, slow response times, and crawl demand spread across too many pages." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does requesting indexing in Search Console fix it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Requesting indexing can speed up a single URL, but it is not a scalable fix. If a whole template is not being indexed, the cause is usually structural and will not be solved by submitting pages one at a time." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is crawled but currently not indexed a penalty?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. It means Google crawled the page but chose not to include it, often because the page appears duplicate, thin, or less useful than other pages on the site. It is a signal to review content and consolidation, not evidence of a manual action." }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I noindex thin pages?",
+            "acceptedAnswer": { "@type": "Answer", "text": "If a page has no realistic chance of ranking and no user value, noindex or consolidating it can be healthier than forcing it into the index. Decide per template and keep the decision documented." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="../index.html" aria-label="Autollmate home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span>Autollmate</span>
+        </a>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="nav-mobile-cta"><a class="btn btn--primary btn--sm" href="../contact.html">Start a project</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav-cta" href="../contact.html">Start a project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-hero">
+        <div class="container">
+          <ol class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li>Why Google ignores your pages</li>
+          </ol>
+          <span class="eyebrow">Indexation</span>
+          <h1>Why Google ignores your pages — and how to diagnose it with evidence</h1>
+          <div class="article-meta">
+            <span class="pill">Diagnostics</span>
+            <span>Jordan Reyes</span>
+            <span class="dot"></span>
+            <time datetime="2026-10-02">October 2, 2026</time>
+            <span class="dot"></span>
+            <span>10 min read</span>
+          </div>
+          <div class="article-cover post-thumb--3" aria-hidden="true">
+            <span>Not indexed is a symptom. Find the diagnosis.</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="container">
+          <div class="prose">
+            <p>"Discovered — currently not indexed" is the most quoted and least useful sentence in technical SEO. It tells you that Google knows about a URL and has not included it. It does not tell you why. Treating it as a diagnosis leads to the same loop everyone has run: request indexing, wait, refresh, repeat.</p>
+
+            <p>Indexing is a decision, not a switch. Search engines decide which URLs are worth crawling, which are worth storing, and which version of a page should represent the others. Your job is to remove every structural reason to say no, then prove the result with evidence.</p>
+
+            <nav class="toc" aria-label="Table of contents">
+              <strong>On this page</strong>
+              <ol>
+                <li><a href="#statuses">Read the status correctly</a></li>
+                <li><a href="#order">Diagnose in the right order</a></li>
+                <li><a href="#evidence">Gather evidence, not guesses</a></li>
+                <li><a href="#patterns">Fix the template, not the page</a></li>
+                <li><a href="#dont">When not to force indexing</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="statuses">Read the status correctly</h2>
+            <p>Search Console labels are clues, not conclusions. They also change over time. The useful move is to separate "not yet crawled" from "crawled and rejected".</p>
+
+            <table>
+              <thead>
+                <tr><th>Status</th><th>What it usually means</th><th>First thing to check</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Discovered — not indexed</td><td>Google knows the URL but has not crawled it.</td><td>Internal linking, crawl demand, server speed, URL inventory size.</td></tr>
+                <tr><td>Crawled — not indexed</td><td>Crawled, but judged not worth including.</td><td>Duplicate or thin content, template quality, consolidation.</td></tr>
+                <tr><td>Duplicate without user-selected canonical</td><td>Multiple versions exist and Google picked one.</td><td>Canonical consistency, parameter variants, internal links.</td></tr>
+                <tr><td>Alternate page with proper canonical tag</td><td>Not an error; a non-canonical version.</td><td>Whether the canonical target is the page you actually want.</td></tr>
+                <tr><td>Excluded by noindex</td><td>A noindex directive is being honoured.</td><td>Whether it is intentional, and whether it was inherited from a template.</td></tr>
+                <tr><td>Soft 404</td><td>Returns 200 but looks empty or error-like.</td><td>Empty categories, out-of-stock pages, JS rendering failures.</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout">
+              <strong>Important</strong>
+              Status labels are search engine reporting, not a specification. Use them to form a hypothesis, then confirm it with your own crawl and log data.
+            </div>
+
+            <h2 id="order">Diagnose in the right order</h2>
+            <p>Work from the outside in. Fixing content before confirming access wastes weeks.</p>
+            <ol>
+              <li><strong>Can it be crawled?</strong> Check robots.txt, server errors, and whether the URL is reachable from internal links. A disallowed page cannot be indexed reliably, even if it is linked.</li>
+              <li><strong>Can it be indexed?</strong> Look for <code>noindex</code>, canonical conflicts, and status codes. Confirm the rendered page actually contains content — not just a JavaScript shell.</li>
+              <li><strong>Is it distinct?</strong> If the page is a near-duplicate of a stronger URL, consolidation is the answer. Find the pattern generating the duplicate and fix it at the source.</li>
+              <li><strong>Is it valuable?</strong> Thin tag pages, empty archives, and stale variants are not going to be indexed just because you want them to be. Improve, merge, or remove them.</li>
+              <li><strong>Is there demand?</strong> New URLs in a large inventory wait longer. Reduce the number of low-value URLs competing for crawl attention.</li>
+            </ol>
+
+            <h2 id="evidence">Gather evidence, not guesses</h2>
+            <ul>
+              <li><strong>A crawl inventory.</strong> Group URLs by pattern and check status, canonical, and robots signals inside each group. If 800 pages share a template, one representative sample is enough to see the pattern.</li>
+              <li><strong>Server logs.</strong> Verify which URLs are requested and how often. A page that is never requested has a discovery problem, not a content problem.</li>
+              <li><strong>Sitemap parity.</strong> Compare sitemap URLs with the crawl inventory. Sitemaps should contain only canonical, indexable, 200 pages.</li>
+              <li><strong>URL Inspection.</strong> Use it on one or two representative URLs, not as a bulk workflow. It is a spot check, not a strategy.</li>
+            </ul>
+            <p>Keep observed facts separate from inference. A canonical tag is observed. "This page is being treated as a duplicate" is an inference from the canonical, the URL pattern, and the reported status. Both are useful; conflating them produces confident wrong answers.</p>
+
+            <h2 id="patterns">Fix the template, not the page</h2>
+            <p>Indexation problems are almost never random. They cluster by template:</p>
+            <ul>
+              <li><strong>Faceted URLs</strong> get discovered but not crawled because they are numerous and low value. Decide whether to canonicalise, noindex, or block per pattern.</li>
+              <li><strong>Paginated series</strong> may be crawled but consolidated. Make sure important items are linked from a crawlable surface, not only deep in pagination.</li>
+              <li><strong>Stale variants</strong> return 200 long after the product is gone. Redirect or remove them.</li>
+              <li><strong>Tag and archive pages</strong> often need consolidation or noindex, not individual content rewrites.</li>
+            </ul>
+            <p>Fixing the template is what makes the fix durable. If you only patch the URLs you happened to inspect, the next deploy regenerates the problem.</p>
+
+            <h2 id="dont">When not to force indexing</h2>
+            <p>Not every URL deserves to be in the index. If a page has no search demand, no unique value, and no internal link equity, indexing it mostly adds noise. Consolidating or removing it can improve the health of the pages you actually care about.</p>
+            <p>This is counterintuitive for teams measured on "number of indexed pages", but it is the right trade. Fewer, stronger pages usually outperform a larger index of thin ones.</p>
+
+            <div class="callout">
+              <strong>Measure the fix</strong>
+              Pick a pattern, record its current crawled/indexed counts, apply one change, re-crawl, and compare. That is the only way to know whether the fix worked — and it is how <a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">PruneSEO</a> is designed to be used.
+            </div>
+
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq-item">
+                <summary>Why does Google say discovered but currently not indexed?</summary>
+                <p>It means Google knows the URL exists but has not crawled it yet, or has chosen not to spend crawl attention on it. Common causes are weak internal linking, large low-value URL inventories, slow response times, and crawl demand spread across too many pages.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Does requesting indexing in Search Console fix it?</summary>
+                <p>Requesting indexing can speed up a single URL, but it is not a scalable fix. If a whole template is not being indexed, the cause is usually structural and will not be solved by submitting pages one at a time.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Is crawled but currently not indexed a penalty?</summary>
+                <p>Not necessarily. It means Google crawled the page but chose not to include it, often because the page appears duplicate, thin, or less useful than other pages on the site. It is a signal to review content and consolidation, not evidence of a manual action.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Should I noindex thin pages?</summary>
+                <p>If a page has no realistic chance of ranking and no user value, noindex or consolidating it can be healthier than forcing it into the index. Decide per template and keep the decision documented.</p>
+              </details>
+            </div>
+
+            <div class="author-card">
+              <span class="avatar" aria-hidden="true">JR</span>
+              <div>
+                <strong>Jordan Reyes</strong>
+                <span>Co-founder &amp; Engineering, Autollmate</span>
+                <p>Builds crawlers, platforms, and the systems behind PruneSEO. Writes about technical SEO and software that has to survive production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related">
+      <div class="container">
+        <h2>Keep reading</h2>
+        <div class="blog-grid">
+          <article class="post-card">
+            <div class="post-thumb"><span class="post-cat">Technical SEO</span><span class="post-index">01</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-30">Oct 30, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="technical-seo-audit-checklist.html">Technical SEO audit checklist: the 9 checks that actually move rankings</a></h3>
+              <a class="link-arrow" href="technical-seo-audit-checklist.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--2"><span class="post-cat">Crawl &amp; Index</span><span class="post-index">02</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-16">Oct 16, 2026</time><span class="dot"></span><span>8 min read</span></div>
+              <h3 class="post-title"><a href="crawl-budget-optimization.html">Crawl budget optimization: stop making Google read pages you don't need</a></h3>
+              <a class="link-arrow" href="crawl-budget-optimization.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--3"><span class="post-cat">Technical SEO</span><span class="post-index">04</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-09-18">Sep 18, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="url-patterns-seo-waste.html">URL patterns and SEO waste: a practical cleanup guide</a></h3>
+              <a class="link-arrow" href="url-patterns-seo-waste.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Autollmate home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span>Autollmate</span>
+          </a>
+          <p>A software development agency and product studio. We build web apps, AI systems, and automation that compound — including our own product, PruneSEO.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/company/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9Z"/></svg>
+            </a>
+            <a href="https://x.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.3L2 2h6.4l4.4 5.8L18.9 2Zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20Z"/></svg>
+            </a>
+            <a href="https://github.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer-heading">Product</h2>
+          <ul class="footer-links">
+            <li><a href="../products.html">PruneSEO overview</a></li>
+            <li><a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">Visit pruneseo.com</a></li>
+            <li><a href="https://pruneseo.com/#pricing" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+            <li><a href="https://docs.pruneseo.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Company</h2>
+          <ul class="footer-links">
+            <li><a href="../about.html">About Autollmate</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h2 class="footer-heading">The Automation Brief</h2>
+          <p>One useful idea on product engineering, technical SEO, or automation. Twice a month.</p>
+          <form data-mock-submit data-success="You're on the list. Look out for the next brief.">
+            <div class="input-row">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              <button class="btn btn--primary btn--sm" type="submit">Join</button>
+            </div>
+            <div class="form-status" hidden></div>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Autollmate. All rights reserved.</p>
+        <ul>
+          <li><a href="../privacy-policy.html">Privacy</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

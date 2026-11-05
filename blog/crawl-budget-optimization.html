@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crawl Budget Optimization: 7 Fixes That Actually Work</title>
+  <meta name="description" content="What crawl budget really is, why crawl waste happens, and seven practical fixes for parameter URLs, thin pages, redirects, sitemaps, and internal links.">
+  <link rel="canonical" href="https://autollmate.com/blog/crawl-budget-optimization.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Jordan Reyes">
+  <meta name="theme-color" content="#06070b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Autollmate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Crawl Budget Optimization: 7 Fixes That Actually Work">
+  <meta property="og:description" content="Crawl budget is not a number you can buy. It is the result of how cleanly your URL space is structured. Here is how to clean it up.">
+  <meta property="og:url" content="https://autollmate.com/blog/crawl-budget-optimization.html">
+  <meta property="og:image" content="https://autollmate.com/assets/img/og-blog-crawl.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Crawl budget optimization.">
+  <meta property="article:published_time" content="2026-10-16T09:00:00+00:00">
+  <meta property="article:modified_time" content="2026-11-05T09:00:00+00:00">
+  <meta property="article:author" content="Jordan Reyes">
+  <meta property="article:section" content="Crawl &amp; Index">
+  <meta property="article:tag" content="crawl budget optimization">
+  <meta property="article:tag" content="SEO crawl waste">
+  <meta property="article:tag" content="indexation">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crawl Budget Optimization: 7 Fixes That Actually Work">
+  <meta name="twitter:description" content="Stop making Google read pages you don't need.">
+  <meta name="twitter:image" content="https://autollmate.com/assets/img/og-blog-crawl.png">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="Autollmate Blog RSS" href="../feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://autollmate.com/blog/crawl-budget-optimization.html#article",
+        "headline": "Crawl Budget Optimization: How to Stop Wasting Google's Attention",
+        "description": "What crawl budget really is, why crawl waste happens, and seven practical fixes for parameter URLs, thin pages, redirects, sitemaps, and internal links.",
+        "datePublished": "2026-10-16T09:00:00+00:00",
+        "dateModified": "2026-11-05T09:00:00+00:00",
+        "author": { "@type": "Person", "name": "Jordan Reyes", "jobTitle": "Co-founder & Engineering", "worksFor": { "@id": "https://autollmate.com/#organization" } },
+        "publisher": { "@id": "https://autollmate.com/#organization" },
+        "image": "https://autollmate.com/assets/img/og-blog-crawl.png",
+        "articleSection": "Crawl & Index",
+        "keywords": "crawl budget optimization, crawl waste, technical SEO, SEO crawl budget",
+        "wordCount": "1150",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://autollmate.com/blog/crawl-budget-optimization.html" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autollmate.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autollmate.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Crawl budget optimization", "item": "https://autollmate.com/blog/crawl-budget-optimization.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is crawl budget a fixed number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Crawl budget is the product of a site's crawl rate limit and crawl demand. It varies with server response times, site health, update frequency, and how many URLs search engines consider worth revisiting. You cannot buy it directly." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does blocking parameter URLs in robots.txt improve rankings?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. Blocking can reduce crawl waste, but it also prevents crawlers from seeing canonicals or noindex tags on those URLs, and it can remove useful facet landing pages. Decide per pattern whether to keep, canonicalise, noindex, or block." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if crawl budget is my problem?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Look for large URL inventories with low-value patterns, slow server responses, frequent redirects, and important pages that take a long time to be recrawled. Compare crawl stats, server logs, and your crawl inventory before concluding that crawl budget is the cause." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="../index.html" aria-label="Autollmate home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span>Autollmate</span>
+        </a>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="nav-mobile-cta"><a class="btn btn--primary btn--sm" href="../contact.html">Start a project</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav-cta" href="../contact.html">Start a project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-hero">
+        <div class="container">
+          <ol class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li>Crawl budget optimization</li>
+          </ol>
+          <span class="eyebrow">Crawl &amp; Index</span>
+          <h1>Crawl budget optimization: stop making Google read pages you don't need</h1>
+          <div class="article-meta">
+            <span class="pill">Guide</span>
+            <span>Jordan Reyes</span>
+            <span class="dot"></span>
+            <time datetime="2026-10-16">October 16, 2026</time>
+            <span class="dot"></span>
+            <span>8 min read</span>
+          </div>
+          <div class="article-cover post-thumb--2" aria-hidden="true">
+            <span>Make every crawl count.</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="container">
+          <div class="prose">
+            <p>Crawl budget is one of the most misunderstood ideas in technical SEO. It is not a quota you can request, and it is not a single number in a dashboard. It is the practical result of two things: how fast a search engine is willing to crawl your server, and how much it wants to revisit the URLs it knows about. You influence both — mostly by making your URL space smaller, cleaner, and more obviously valuable.</p>
+
+            <p>If your site has 200 pages and loads in 300ms, crawl budget is not your problem. If it has 180,000 URLs, most of them filters and stale variants, and a new product takes three weeks to get recrawled, it probably is.</p>
+
+            <nav class="toc" aria-label="Table of contents">
+              <strong>On this page</strong>
+              <ol>
+                <li><a href="#what-it-is">What crawl budget actually is</a></li>
+                <li><a href="#waste">What creates crawl waste</a></li>
+                <li><a href="#measure">Measure before you fix</a></li>
+                <li><a href="#fixes">Seven fixes that work</a></li>
+                <li><a href="#avoid">What not to do</a></li>
+                <li><a href="#loop">A repeatable monthly loop</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="what-it-is">What crawl budget actually is</h2>
+            <p>Search engines describe crawl budget as the combination of a <strong>crawl rate limit</strong> — how many simultaneous requests your server can handle without degrading — and <strong>crawl demand</strong> — how much the engine wants to crawl and recrawl your URLs. A fast, stable server raises the limit. Useful, frequently updated, well-linked pages raise demand.</p>
+            <p>Two implications follow. First, performance is an SEO feature: slow responses throttle crawling. Second, publishing more URLs is not free. Every low-value URL you expose competes for the same finite attention as the pages that pay the bills.</p>
+
+            <h2 id="waste">What creates crawl waste</h2>
+            <p>The usual sources are structural, not content-level:</p>
+            <ul>
+              <li><strong>Faceted navigation.</strong> Filters, sort orders, and view modes multiply a single category into hundreds of URLs.</li>
+              <li><strong>Pagination and archives.</strong> Deep page numbers and date archives that nobody links to or searches for.</li>
+              <li><strong>Tracking and session parameters.</strong> URLs that exist only to carry analytics or state.</li>
+              <li><strong>Thin tag and author pages.</strong> Auto-generated combinations with one item each.</li>
+              <li><strong>Stale variants.</strong> Old product IDs, discontinued colourways, and expired promotions that still return 200.</li>
+              <li><strong>Soft 404s.</strong> Pages that technically resolve but show no meaningful content.</li>
+              <li><strong>Redirect chains.</strong> Each hop is another request spent on a URL that no longer exists.</li>
+            </ul>
+
+            <h2 id="measure">Measure before you fix</h2>
+            <p>Do not start blocking things because a blog post said so. Establish the baseline:</p>
+            <ol>
+              <li><strong>Count and cluster.</strong> Crawl the site and group URLs by path shape, parameter set, and status family. This is the single most useful view of crawl waste.</li>
+              <li><strong>Read server logs.</strong> See which patterns search engines actually request, how often, and which return 200, 301, or 404.</li>
+              <li><strong>Check crawl stats.</strong> Where available, trends in response time and host load tell you whether the crawl rate limit is being hit.</li>
+              <li><strong>Time-to-reindex.</strong> Publish or change a key page, then track how long until it is recrawled. That delay is your practical budget signal.</li>
+            </ol>
+
+            <h2 id="fixes">Seven fixes that work</h2>
+            <h3>1. Shrink the URL space</h3>
+            <p>The best crawl budget optimisation is fewer URLs. Stop generating combinations that no human would search for, retire stale variants with a 410 or a redirect to the closest equivalent, and remove empty tag pages from internal linking.</p>
+
+            <h3>2. Decide per pattern, not per URL</h3>
+            <p>For each pattern, choose an intent: keep and index, canonicalise to a parent, <code>noindex</code> but allow crawling, or block entirely. A consistent pattern-level decision is maintainable; a list of 4,000 individual exceptions is not.</p>
+
+            <h3>3. Use robots.txt for crawl control, not deindexing</h3>
+            <p>If a pattern has no value and never will, blocking it in <code>robots.txt</code> stops requests. But blocked URLs can still be indexed if linked, and crawlers cannot see canonical or noindex tags they are not allowed to fetch. Use it for genuine crawl control, not as a deindexing tool.</p>
+
+            <h3>4. Canonicalise deliberately</h3>
+            <p>Canonical tags consolidate signals, but they do not stop a crawler from fetching the duplicate. If the duplicate is expensive and worthless, blocking plus consolidation is often better than a canonical alone. Never mix conflicting signals.</p>
+
+            <h3>5. Keep sitemaps clean</h3>
+            <p>Sitemaps should contain canonical, indexable, 200 URLs only. Redirects, 404s, and noindex pages in a sitemap are explicit invitations to waste attention. Validate sitemap URLs against your crawl inventory after every template change.</p>
+
+            <h3>6. Fix internal linking</h3>
+            <p>Crawl priority follows links. If every filter combination is linked in navigation, you are telling search engines they all matter. Link to the pages you want ranked, and remove repetitive links to low-value URL patterns.</p>
+
+            <h3>7. Make the server fast and stable</h3>
+            <p>Improve time to first byte, cache aggressively at the edge, and avoid serving 500s or long redirect chains under load. A site that responds quickly and predictably earns a higher crawl rate.</p>
+
+            <h2 id="avoid">What not to do</h2>
+            <ul>
+              <li><strong>Don't blanket-disallow all parameters.</strong> You will lose legitimate landing pages and the link equity flowing through them.</li>
+              <li><strong>Don't block CSS or JavaScript.</strong> Search engines need them to render the page.</li>
+              <li><strong>Don't combine noindex with disallow.</strong> A blocked page cannot pass the noindex message along.</li>
+              <li><strong>Don't assume a low crawl rate is sabotage.</strong> Slow servers and thin content are far more common causes.</li>
+            </ul>
+
+            <div class="callout">
+              <strong>Try this first</strong>
+              Group your crawl by URL pattern and sort by URL count. Fix the two largest low-value patterns before touching anything else. In most audits, that alone removes the majority of waste.
+            </div>
+
+            <h2 id="loop">A repeatable monthly loop</h2>
+            <p>Crawl waste grows back. New filters, campaign parameters, and archived content appear every month. Treat it as maintenance:</p>
+            <ol>
+              <li>Crawl and group by pattern.</li>
+              <li>Compare with last month's crawl.</li>
+              <li>Find patterns that grew without adding value.</li>
+              <li>Apply one fix and record the expected effect.</li>
+              <li>Re-crawl and compare by pattern, not by total count.</li>
+            </ol>
+            <p>That loop is exactly what we built <a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">PruneSEO</a> to support: crawl, cluster, prioritise, and compare over time. If you want the broader checklist these fixes sit inside, read our <a href="technical-seo-audit-checklist.html">technical SEO audit checklist</a>.</p>
+
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq-item">
+                <summary>Is crawl budget a fixed number?</summary>
+                <p>No. Crawl budget is the product of a site's crawl rate limit and crawl demand. It varies with server response times, site health, update frequency, and how many URLs search engines consider worth revisiting. You cannot buy it directly.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Does blocking parameter URLs in robots.txt improve rankings?</summary>
+                <p>Not on its own. Blocking can reduce crawl waste, but it also prevents crawlers from seeing canonicals or noindex tags on those URLs, and it can remove useful facet landing pages. Decide per pattern whether to keep, canonicalise, noindex, or block.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How do I know if crawl budget is my problem?</summary>
+                <p>Look for large URL inventories with low-value patterns, slow server responses, frequent redirects, and important pages that take a long time to be recrawled. Compare crawl stats, server logs, and your crawl inventory before concluding that crawl budget is the cause.</p>
+              </details>
+            </div>
+
+            <div class="author-card">
+              <span class="avatar" aria-hidden="true">JR</span>
+              <div>
+                <strong>Jordan Reyes</strong>
+                <span>Co-founder &amp; Engineering, Autollmate</span>
+                <p>Builds crawlers, platforms, and the systems behind PruneSEO. Writes about technical SEO and software that has to survive production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related">
+      <div class="container">
+        <h2>Keep reading</h2>
+        <div class="blog-grid">
+          <article class="post-card">
+            <div class="post-thumb"><span class="post-cat">Technical SEO</span><span class="post-index">01</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-30">Oct 30, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="technical-seo-audit-checklist.html">Technical SEO audit checklist: the 9 checks that actually move rankings</a></h3>
+              <a class="link-arrow" href="technical-seo-audit-checklist.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--3"><span class="post-cat">Indexation</span><span class="post-index">03</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-10-02">Oct 2, 2026</time><span class="dot"></span><span>10 min read</span></div>
+              <h3 class="post-title"><a href="why-google-ignores-pages.html">Why Google ignores your pages — and how to diagnose it with evidence</a></h3>
+              <a class="link-arrow" href="why-google-ignores-pages.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-thumb post-thumb--2"><span class="post-cat">Technical SEO</span><span class="post-index">04</span></div>
+            <div class="post-body">
+              <div class="post-meta"><time datetime="2026-09-18">Sep 18, 2026</time><span class="dot"></span><span>9 min read</span></div>
+              <h3 class="post-title"><a href="url-patterns-seo-waste.html">URL patterns and SEO waste: a practical cleanup guide</a></h3>
+              <a class="link-arrow" href="url-patterns-seo-waste.html">Read article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Autollmate home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 12 4l7 14"/><path d="M8.4 13.4h7.2"/><circle cx="12" cy="4.4" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span>Autollmate</span>
+          </a>
+          <p>A software development agency and product studio. We build web apps, AI systems, and automation that compound — including our own product, PruneSEO.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/company/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9Z"/></svg>
+            </a>
+            <a href="https://x.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.3L2 2h6.4l4.4 5.8L18.9 2Zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20Z"/></svg>
+            </a>
+            <a href="https://github.com/autollmate" target="_blank" rel="noopener noreferrer" aria-label="Autollmate on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer-heading">Product</h2>
+          <ul class="footer-links">
+            <li><a href="../products.html">PruneSEO overview</a></li>
+            <li><a href="https://pruneseo.com" target="_blank" rel="noopener noreferrer">Visit pruneseo.com</a></li>
+            <li><a href="https://pruneseo.com/#pricing" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+            <li><a href="https://docs.pruneseo.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Company</h2>
+          <ul class="footer-links">
+            <li><a href="../about.html">About Autollmate</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h2 class="footer-heading">The Automation Brief</h2>
+          <p>One useful idea on product engineering, technical SEO, or automation. Twice a month.</p>
+          <form data-mock-submit data-success="You're on the list. Look out for the next brief.">
+            <div class="input-row">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              <button class="btn btn--primary btn--sm" type="submit">Join</button>
+            </div>
+            <div class="form-status" hidden></div>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Autollmate. All rights reserved.</p>
+        <ul>
+          <li><a href="../privacy-policy.html">Privacy</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
